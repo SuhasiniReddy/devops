@@ -1,3 +1,49 @@
+ https://www.edureka.co/blog/maven-tutorial/ - devops tuto
+
+https://github.com/valaxyTech/hello-world.git - git hub 
+
+https://github.com/miztiik/Devops-Demos/tree/master/setup-jenkins-slave  -- 
+master slave configure in jenkins
+
+cc7c4032c0a34156845fdd16beb04edf
+
+<role rolename="manager-gui"/>
+<role rolename="manager-script"/>
+<role rolename="manager-jmx"/>
+<role rolename="manager-status"/>
+<user username="admin" password="admin" roles="manager-gui,manager-script,manager-mnx,manager-status"/>
+<user username="deployer" password="deployer" roles="manager-script"/>
+<user username="tomcat" password="tomcat" roles="manager-gui"/>
+
+
+rpm -Uvh https://d1.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+
+for maven project :
+
+https://github.com/arsr319/maven-hello-world.git
+
+https://gihub.com/Zulaikha12/git-test.git
+
+https://gihub.com/Zulaikha12/gitnew.git
+
+
+node{
+   for (int i=0:i<2:i++) {
+      stage "stage #" +i
+	  print  'hello , world '
+	  if (i==0) 
+	  { 
+	  echo 'running on stage #0'
+	  }
+	   else { 
+	       build 'declarative pipeline'
+		   echo 'Running on stage #1'
+	   }
+	   }
+	   }
+	   
+	   
+	   
 pipeline {
        agent any 
 	       stages {
@@ -7,10 +53,10 @@ pipeline {
 							 }
 							 }
 							 stage('two') {
-							  steps { 
-                                                               input('do u want to proceed ?')
+							    steps {
+							      input('do u want to proceed?')
 							
-							}
+							}}
 							  stage('three') {
 							      when { 
 								    not {  
@@ -22,13 +68,15 @@ pipeline {
 							 echo "hello"
 					}
 					}
+					
+					
 					  stage('four') {
 					   parellel {
 					    stage('unit test') {
 						 steps {
 						    echo "running the unit test .."
 					}
-					}
+					} } }
 					 stage('integration test') {
 					  agent{
 					   docker{
@@ -40,8 +88,7 @@ pipeline {
 						   echo 'running the integration test ..'
 						   }
 						   }
-						   } 
-					}
-					}
-					}
-					}
+						   } } 
+					
+					
+					
